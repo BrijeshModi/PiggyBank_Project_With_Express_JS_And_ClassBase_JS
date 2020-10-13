@@ -68,7 +68,7 @@ app.post('/authenticator', function (req, res) {
        var Password = req.body.pass;
        console.log("Name is " + Name);
        console.log("Pass is " + Password);
-       if (Name === "tom" && Password === "cat") {
+       if (Name === "Hari" && Password === "3690") {
            req.session.isAuthenticated = true;
            res.redirect("index.html");
        }
