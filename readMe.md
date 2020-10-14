@@ -20,4 +20,4 @@ user can logout from logout button.
 
 transaction displays on bottom, page also gives the error message if user put incorrect input.
 
-piggybank.js file gives the understanding of JS class, constructor, class methods and functions/ method calling.
+piggybank.js file gives the understanding of JS class, constructor, class methods and functions/ method calling
