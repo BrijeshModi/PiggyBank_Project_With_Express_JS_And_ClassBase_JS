@@ -10,6 +10,8 @@ Run NPM install Body-Parser —save command from terminal.
 Run NPM install Cookie-Parser —save command from terminal.
 Run NPM install express-session —save command from terminal.
 
+run index.js file on terminal which will allow to run port 8089,
+
 Open the windows browser and type LOCALHOST:8089/login,
 Screen will ask you User Name and Password,
 User Name : Hari
@@ -20,4 +22,4 @@ user can logout from logout button.
 
 transaction displays on bottom, page also gives the error message if user put incorrect input.
 
-piggybank.js file gives the understanding of JS class, constructor, class methods and functions/ method calling.
+piggybank.js file gives the understanding of JS class, constructor, class methods and functions/ method calling
