@@ -13,7 +13,7 @@ Run NPM install express-session —save command from terminal.
 run index.js file on terminal which will allow to run port 8089,
 
 Open the windows browser and type LOCALHOST:8089/login,
-Screen will ask you User Name and Password,
+Screen will ask you User Name and Password.
 User Name : Hari
 Password : 3690.
 
