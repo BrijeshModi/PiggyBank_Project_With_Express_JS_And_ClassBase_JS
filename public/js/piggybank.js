@@ -1,40 +1,35 @@
 class PiggyBank{
-    constructor(){
+    constructor(obj){
         this.balance = 0;
         this.lt = 0;
         this.rowCount = -1;
-        this.depositeButton = document.getElementById("depositeButton");
-        this.depositeText = document.getElementById("depositeText");
-        this.withdrawButton = document.getElementById("withdrawButton");
-        this.withdrawText = document.getElementById("withdrawText");
-        this.balanceView = document.getElementById("balance");
-        this.messageView = document.getElementById("message");
-        }
+        this.obj = obj;
+      }
   deposit(v){
     if (Number.isNaN(v) || v <= 0){
-      this.messageView.innerText = "Please Enter Correct Amount in Deposite Box"
+      this.obj.messageView.innerText = "Please Enter Correct Amount in Deposite Box"
     }
      else if(v > 0){
         this.balance += v;
         this.lt = v;
-        this.messageView.innerText = "";
-        this.depositeText.value = 0;
+        this.obj.messageView.innerText = "";
+        this.obj.depositeText.value = 0;
         this.statement();                
       }
 
   }
   withdraw(v){
     if (Number.isNaN(v) || v < 0){
-      this.messageView.innerText = "Please Enter Correct Amount in Withdraw Box"
+      this.obj.messageView.innerText = "Please Enter Correct Amount in Withdraw Box"
     }
     else if(this.balance == 0 || v > this.balance){
-      this.messageView.innerText = "There is not Sufficieant Fund In Account Or Your Balance is Zero"
+      this.obj.messageView.innerText = "There is not Sufficieant Fund In Account Or Your Balance is Zero"
     }
      else if(v > 0 && v <= this.balance){
         this.balance -= v;
         this.lt = -v;
-        this.messageView.innerText = "";
-        this.withdrawText.value = 0;
+        this.obj.messageView.innerText = "";
+        this.obj.withdrawText.value = 0;
         this.statement();  
       }
   }
@@ -47,24 +42,39 @@ class PiggyBank{
     td.id= "td" + i;
     document.getElementById("tr1").appendChild(td);
     }
-    document.getElementById("td1").innerHTML = new Date().toUTCString();
-    document.getElementById("td2").innerHTML = this.lt;
-    document.getElementById("td3").innerHTML = this.balance;
+        document.getElementById("td1").innerHTML = new Date().toUTCString();
+        document.getElementById("td2").innerHTML = this.lt;
+        document.getElementById("td3").innerHTML = this.balance;
   }
  }
-let money = new PiggyBank();
- money.depositeButton.addEventListener('click', depositeMoney)
+
+ let obj = 
+{
+  depositeButton : document.getElementById("depositeButton"),
+  depositeText : document.getElementById("depositeText"),
+  withdrawButton : document.getElementById("withdrawButton"),
+  withdrawText : document.getElementById("withdrawText"),
+  balanceView : document.getElementById("balance"),
+  messageView : document.getElementById("message")
+}
+
+let money = new PiggyBank(obj);
+
 function depositeMoney()
 { 
-    let moneyIn = parseFloat(money.depositeText.value);
+    let moneyIn = parseFloat(money.obj.depositeText.value);
     money.deposit(moneyIn);
-   money.balanceView.value = parseFloat(money.balance)
+   money.obj.balanceView.value = parseFloat(money.balance)
 }
-money.withdrawButton.addEventListener('click', withdrawMoney)
+
 function withdrawMoney()
 { 
-    let moneyOut = parseFloat(money.withdrawText.value);
+    let moneyOut = parseFloat(money.obj.withdrawText.value);
     money.withdraw(moneyOut);
-    money.balanceView.value = parseFloat(money.balance)
+    money.obj.balanceView.value = parseFloat(money.balance)
 }
+
+money.obj.depositeButton.addEventListener('click', depositeMoney)
+money.obj.withdrawButton.addEventListener('click', withdrawMoney)
+
 

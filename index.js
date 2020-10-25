@@ -1,33 +1,4 @@
-/*var express = require('express');
-var app = express();
 
-var bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({"extended":false}));
-
-
-app.use(express.static('public'));
- 
-
-app.get("/",function(req,res){
-   res.redirect("Login.html");
- });
-
-app.post('/authenticator', function (req , res) {
- var Name = req.body.name;
- var Password = req.body.pass;
- console.log("Name is " + Name);
- console.log("Pass is " + Password);
- if(Name === "tom" && Password === "cat"){
-     res.redirect("index.html");
- }
- else{
-    res.redirect("/Login.html");
- }
-});
-
-app.listen(8089, function () {
-  console.log('ExpressJS is running on port 8089');
-});*/
 var express = require('express');
 var app = express();
 
